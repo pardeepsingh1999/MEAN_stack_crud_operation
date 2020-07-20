@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const _ = require('lodash');
+// const _ = require('lodash');
 
 const userSchema = require('../models/userModel');
 
@@ -20,7 +20,9 @@ router.get('/', (req, res) => {
                     });
                 })
             } else {
-                res.status(200).json({ user: _.pick(user, ['_id','name', 'email', 'gender', 'userImage']) });
+//                 res.status(200).json({ user: _.pick(user, ['_id','name', 'email', 'gender', 'userImage']) });
+                res.status(200).json({ user: user });
+                
             }
         }
     })
